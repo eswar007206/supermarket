@@ -1,0 +1,81 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-plum: var(--brand-plum);
+  --color-brand-ink: var(--brand-ink);
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Brand palette from user */
+  --brand-cream: oklch(0.984 0.012 90);     /* #FEFBF6 */
+  --brand-blue: oklch(0.848 0.055 236);     /* #A6D1E6 */
+  --brand-plum: oklch(0.436 0.098 328);     /* #7F5283 */
+  --brand-ink: oklch(0.312 0.012 300);      /* #3D3C42 */
+
+  --background: var(--brand-cream);
+  --foreground: var(--brand-ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--brand-ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-plum);
+  --primary-foreground: oklch(0.99 0.005 90);
+  --secondary: var(--brand-blue);
+  --secondary-foreground: var(--brand-ink);
+  --muted: oklch(0.95 0.008 80);
+  --muted-foreground: oklch(0.46 0.015 300);
+  --accent: var(--brand-blue);
+  --accent-foreground: var(--brand-ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.015 80);
+  --input: oklch(0.92 0.012 80);
+  --ring: var(--brand-plum);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
